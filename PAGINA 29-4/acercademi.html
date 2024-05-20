@@ -6,7 +6,21 @@
     <title>Federico Lezcano</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
     <link href="cover.css" rel="stylesheet">
+    <style>
+        .cert-img {
+            max-width: 100%; /* Limita el ancho máximo de la imagen */
+            height: auto; /* Mantiene la proporción de aspecto */
+        }
+
+        .text-black-border {
+            text-shadow: -1px -1px 0 #000,  
+                         1px -1px 0 #000,
+                        -1px  1px 0 #000,
+                         1px  1px 0 #000;
+        }
+    </style>
 </head>
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -14,7 +28,7 @@
             <div class="inner">
                 <h3 class="masthead-brand">FL DEV</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Inicio</a>
+                    <a class="nav-link active" href="index.html">Inicio</a>
                     <a class="nav-link" href="trabajos.html">Trabajos</a>
                     <a class="nav-link" href="acercademi.html">Acerca de</a>
                 </nav>
@@ -22,31 +36,16 @@
         </header>
 
         <main role="main" class="inner cover">
-            <h1 class="cover-heading">Federico Lezcano.</h1>
-            <p class="lead">Estudiante de Ingeniería Informática <i class="fas fa-cogs"></i>
-                , y Tecnicatura en programación de videojuegos. <i class="fas fa-gamepad"></i></p>
-            <div>
+            <h2 class="section-title">Acerca de mí</h2>
+            <p>Hola, soy Federico Lezcano. Actualmente resido en Corrientes Capital . Estudio Ingeniería Informática y también estoy cursando la Tecnicatura en Programación de Videojuegos.</p>
+           
+
+            <div class="Cursos">
+                <h3 class="section-title">Certifacados </h3>
+                <img src="Img/Certificado Desarrollo de Video Juegos.jpg" alt="Certificado video juegos " class="cert-img">
+                
                
             </div>
-
-            <h2> Contacto</h2>
-            <p>Dejanos tu mail, en la brevedad nos contactaremos </p>
-            <form action="mailto:tucorreo@example.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-lg btn-secondary">Enviar</button>
-            </form>
-
         </main>
 
         <footer class="mastfoot mt-auto">
@@ -57,4 +56,3 @@
     </div>
 </body>
 </html>
-
