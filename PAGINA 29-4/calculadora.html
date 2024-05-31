@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Federico Lezcano</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #f7f7f7;
+        }
+
+        .calculator-display {
+            margin-bottom: 10px;
+        }
+
+        .calculator-display-input {
+            width: 100%;
+            font-size: 2em;
+            text-align: right;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .calculator-keys button {
+            width: 22%;
+            margin: 1%;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">FL DEV</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="trabajos.html">Trabajos</a>
+                    <a class="nav-link" href="acercademi.html">Acerca de</a>
+                    <a class="nav-link active" href="calculadora.html">Calculadora</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Calculadora</h1>
+            <div id="calculadora" class="calculator">
+                <div class="calculator-display">
+                    <input type="text" id="display" class="calculator-display-input" disabled>
+                </div>
+                <div class="calculator-keys">
+                    <button type="button" class="btn btn-secondary" value="7">7</button>
+                    <button type="button" class="btn btn-secondary" value="8">8</button>
+                    <button type="button" class="btn btn-secondary" value="9">9</button>
+                    <button type="button" class="btn btn-secondary" value="/">/</button>
+                    <button type="button" class="btn btn-secondary" value="4">4</button>
+                    <button type="button" class="btn btn-secondary" value="5">5</button>
+                    <button type="button" class="btn btn-secondary" value="6">6</button>
+                    <button type="button" class="btn btn-secondary" value="*">*</button>
+                    <button type="button" class="btn btn-secondary" value="1">1</button>
+                    <button type="button" class="btn btn-secondary" value="2">2</button>
+                    <button type="button" class="btn btn-secondary" value="3">3</button>
+                    <button type="button" class="btn btn-secondary" value="-">-</button>
+                    <button type="button" class="btn btn-secondary" value="0">0</button>
+                    <button type="button" class="btn btn-secondary" value=".">.</button>
+                    <button type="button" class="btn btn-secondary" value="=">=</button>
+                    <button type="button" class="btn btn-secondary" value="+">+</button>
+                    <button type="button" class="btn btn-secondary" value="C">C</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>&copy; 2024 Corrientes Federico Lezcano</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const display = document.getElementById('display');
+            const buttons = Array.from(document.querySelectorAll('.calculator-keys button'));
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const value = button.value;
+
+                    if (value === 'C') {
+                        display.value = '';
+                    } else if (value === '=') {
+                        try {
+                            display.value = eval(display.value);
+                        } catch (e) {
+                            display.value = 'Error';
+                        }
+                    } else {
+                        display.value += value;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
