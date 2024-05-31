@@ -8,7 +8,7 @@ Este es un Proyecto Entregable para la carrera de Tec. Programacion y Diseño de
 
 Actualizacion
 Ultima  
-*20-5-2024. 
+*31-5-2024. 
   
 bash
 
@@ -22,7 +22,7 @@ git clone [https://github.com/FedericoLezcano/Programacion-III/tree/main](https:
 
 
 
-link pagina online https://664bd0033800ea3cb42b7751--brilliant-fox-b2abb0.netlify.app/
+link pagina online [https://664bd0033800ea3cb42b7751--brilliant-fox-b2abb0.netlify.app/](https://federicolezcano31-5.netlify.app/)
 
     
 
