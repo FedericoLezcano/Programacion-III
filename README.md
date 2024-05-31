@@ -5,6 +5,7 @@ Este es un Proyecto Entregable para la carrera de Tec. Programacion y Diseño de
     +HTML
     +CSS
     +Bootstrap
+    +JS
 
 Actualizacion
 Ultima  
