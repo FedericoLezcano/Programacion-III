@@ -23,7 +23,7 @@ git clone [https://github.com/FedericoLezcano/Programacion-III/tree/main](https:
 
 
 
-link pagina online(https://federicolezcano31-5.netlify.app/)](https://federicolezcano.netlify.app/)
+link pagina online https://federicolezcano.netlify.app
 
     
 
