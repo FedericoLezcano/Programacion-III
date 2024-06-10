@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memotest - Federico Lezcano</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
+    <style>
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            max-width: 340px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .card img {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card.flipped img {
+            display: block;
+        }
+
+        .scoreboard {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">FL DEV</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="trabajos.html">Trabajos</a>
+                    <a class="nav-link" href="acercademi.html">Acerca de</a>
+                    <a class="nav-link active" href="memotest.html">Memotest</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h1 class="cover-heading">Memotest</h1>
+                <button id="resetButton" class="btn btn-primary">Reiniciar</button>
+            </div>
+            <div class="scoreboard">
+                <p>Puntaje: <span id="score">0</span></p>
+                <p>Puntaje Máximo: <span id="highScore">0</span></p>
+            </div>
+            <div id="gameBoard" class="game-board"></div>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>&copy; 2024 Corrientes Federico Lezcano</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardImages = [
+                'Img/img1.png', 'Img/img1.png',
+                'Img/img2.png', 'Img/img2.png',
+                'Img/img3.png', 'Img/img3.png',
+                'Img/img4.png', 'Img/img4.png',
+                'Img/img5.png'
+            ];
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            shuffle(cardImages);
+
+            const gameBoard = document.getElementById('gameBoard');
+            let firstCard = null;
+            let secondCard = null;
+            let lockBoard = false;
+
+            cardImages.forEach(src => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `<img src="${src}" alt="memory card">`;
+                card.addEventListener('click', flipCard);
+                gameBoard.appendChild(card);
+            });
+
+            function flipCard() {
+                if (lockBoard) return;
+                if (this === firstCard) return;
+
+                this.classList.add('flipped');
+
+                if (!firstCard) {
+                    firstCard = this;
+                    return;
+                }
+
+                secondCard = this;
+                checkForMatch();
+            }
+
+            function checkForMatch() {
+                const isMatch = firstCard.innerHTML === secondCard.innerHTML;
+               if (isMatch)
+               {
+                disableCards();
+                updateScore();
+               }
+               else
+               {
+                unflipCards();
+               }
+            }
+
+            function disableCards() {
+                firstCard.removeEventListener('click', flipCard);
+                secondCard.removeEventListener('click', flipCard);
+                resetBoard();
+            }
+
+            function unflipCards() {
+                lockBoard = true;
+                setTimeout(() => {
+                    firstCard.classList.remove('flipped');
+                    secondCard.classList.remove('flipped');
+                    resetBoard();
+                }, 1000);
+            }
+
+            function resetBoard() {
+                [firstCard, secondCard, lockBoard] = [null, null, false];
+            }
+            const scoreElement = document.getElementById('score');
+            const highScoreElement = document.getElementById('highScore');
+            const resetButton = document.getElementById('resetButton');
+            let score = 0;
+            let highScore = localStorage.getItem('highScore') || 0;
+
+            highScoreElement.textContent = highScore;
+
+            function initializeGame() {
+                gameBoard.innerHTML = '';
+                score = 0;
+                scoreElement.textContent = score;
+                firstCard = null;
+                secondCard = null;
+                lockBoard = false;
+                shuffle(cardImages);
+                cardImages.forEach(src => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.innerHTML = `<img src="${src}" alt="memory card">`;
+                    card.addEventListener('click', flipCard);
+                    gameBoard.appendChild(card);
+                });
+            }
+
+            function updateScore() {
+                score += 1;
+                scoreElement.textContent = score;
+                if (score > highScore) {
+                    highScore = score;
+                    localStorage.setItem('highScore', highScore);
+                    highScoreElement.textContent = highScore;
+                }
+            }
+
+            resetButton.addEventListener('click', initializeGame);
+
+            initializeGame();
+        });
+    </script>
+</body>
+</html>
