@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajos - Federico Lezcano</title>
-    <link href="cover.css" rel="stylesheet">
+    <title>Federico Lezcano</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/trabajos.css" rel="stylesheet">
     <style>
-        .tarjeta-transparente {
-            background-color: rgba(255, 255, 255, 0); 
-            border: none; 
-           
-        }
-
         body {
-            color: #fff;
-                 } 
+            background-color: #8598aa; /* Color de fondo oscuro */
+            color: #fff; /* Color del texto */
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.521); /* Fondo semi-transparente */
+            border: 1px solid #ffffff; /* Borde blanco */
+        }
+        .card-title {
+            color: #ffffff; /* Color del título */
+        }
+        .card-text {
+            color: #ffffff; /* Color del texto del cuerpo */
+        }
+        .btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    border-color: #007bff; /* Borde del botón */
+    display: inline-flex; /* Hacer que el botón sea un contenedor de flex */
+    align-items: center; /* Alinear elementos verticalmente en el centro */
+    justify-content: center; /* Alinear elementos horizontalmente en el centro */
+    padding: 0.375rem 0.75rem; /* Añadir relleno al botón */
+}
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+            border-color: #0056b3; /* Borde del botón al pasar el c */
+        }
+        .nav-masthead {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
     </style>
-   
 </head>
-<body>
-    <div class="container">
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
                 <h3 class="masthead-brand">FL DEV</h3>
@@ -32,67 +54,63 @@
                 </nav>
             </div>
         </header>
-
-        <h1 class="mt-5">Mis Proyectos</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4 tarjeta-transparente"> 
-                    <div class="card-body">
-                        <h5 class="card-title">Proyectos web</h5>
-                        <p class="card-text">Aqui se encontraran todos losa proyectos de pagina web subido a github </p>
-                        <a href="https://github.com/FedericoLezcano/Programacion-III.git" class="btn btn-primary"  target="_blank">Ver github <i class=""></i></a>
+        <div class="container mt-5">
+            <h1 class="text-center mb-5">Mis Proyectos</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyectos web</h5>
+                            <a href="https://github.com/FedericoLezcano/Programacion-III.git" class="btn btn-primary btn-block" target="_blank">Ver en GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 tarjeta-transparente">
-                    <div class="card-body">
-                        <h5 class="card-title">Juego hecho en Godot</h5>
-                        <p class="card-text">Pequeña muestra de un juego de plataformas creado en godot usando en lenguaje de programacion de GD Script.</p>
-                        
-                        <a href="https://www.youtube.com/watch?v=Ia7FRTVvKQ0&ab_channel=Federico" class="btn btn-primary" target="_blank">Ver Video en YouTube <i class="fab fa-youtube"></i> </a>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Juego hecho en Godot</h5>
+                            <a href="https://www.youtube.com/watch?v=Ia7FRTVvKQ0&ab_channel=Federico" class="btn btn-primary btn-block" target="_blank">Ver en YouTube <i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 tarjeta-transparente">
-                    <div class="card-body">
-                        <h5 class="card-title">Juego hecho en Unity </h5>
-                        <p class="card-text">Pequeña muestra de un juego de 3d creado en unity.</p>
-                        
-                        <a href="https://www.youtube.com/watch?v=lEGBk4g61oQ" class="btn btn-primary" target="_blank">Ver Video en YouTube <i class="fab fa-youtube"></i> </a>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Juego hecho en Unity</h5>
+                            <a href="https://www.youtube.com/watch?v=lEGBk4g61oQ" class="btn btn-primary btn-block" target="_blank">Ver en YouTube  <i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 tarjeta-transparente">
-                    <div class="card-body">
-                        <h5 class="card-title">Calculadora</h5>
-                        <p class="card-text">Pequeña muestra de una calculadora hecho con JS </p>
-                        
-                        <a href="calculadora.html" class="btn btn-primary" target="_blank">Calculadora <i class=""></i> </a>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Juego hecho en Unity</h5>
+                            <p class="card-text">Juego 3D Utilizando Thirdparty assets </p>
+                            <a href="https://www.youtube.com/watch?v=lEGBk4g61oQ" class="btn btn-primary btn-block"target="_blank">Ver en YouTube <i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4 tarjeta-transparente">
-                    <div class="card-body">
-                        <h5 class="card-title">Memotest</h5>
-                        <p class="card-text">Pequeña muestra de un memotest hecho con JS </p>
-                        
-                        <a href="memotest.html" class="btn btn-primary" target="_blank">Memotest <i class=""></i> </a>
+                <div class="col-md-4 mb-4">
+                    <div class="card mb-4 tarjeta-transparente">
+                        <div class="card-body">
+                            <h5 class="card-title">Calculadora</h5>
+                            <p class="card-text">Pequeña muestra de una calculadora hecho con JS </p>
+                            <a href="calculadora.html" class="btn btn-primary" target="_blank">Calculadora <i class=""></i> </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-           
-        </div>
-    </div>
-
-</body>
-<footer class="mastfoot mt-auto">
-    <div class="inner">
-        <p>&copy; 2024 Corrientes Federico Lezcano</p>
-    </div>
-</footer>
-</html>
+                <div class="col-md-4 mb-4">
+                    <div class="card mb-4 tarjeta-transparente">
+                        <div class="card-body">
+                            <h5 class="card-title">Memotest</h5>
+                            <p class="card-text">Pequeña muestra de un memotest hecho con JS </p>
+                            <a href="memotest.html" class="btn btn-primary" target="_blank">Memotest <i class=""></i> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Etiquetas y Promps</h5>
+                            <p class="card-text">Etiquetas Responsivas </p>
+                            <a href="etiquetas.html" class="btn btn-primary btn-block" target="_blank">Etiquetas <i class
