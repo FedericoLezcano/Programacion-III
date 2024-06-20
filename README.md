@@ -9,7 +9,7 @@ Este es un Proyecto Entregable para la carrera de Tec. Programacion y Diseño de
 
 Actualizacion
 Ultima  
-*10-6-2024. 
+*20-6-2024. 
   
 bash
 
