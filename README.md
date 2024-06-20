@@ -6,15 +6,16 @@ Este es un Proyecto Entregable para la carrera de Tec. Programacion y Diseño de
     +CSS
     +Bootstrap
     +JS
+    *20-6-2024. 
+    Datos de los cambios
+    *Se removio el logotipo de Asus ROG. 
+    -*se Agrego Funcionalidad al Formulario. Probar, te responderé si recibo la notificacion. 
+    -*Se mejoro la estetica en la seccion Trabajos. 
+    -*Se Agrego en la seccion trabajos, las etiquetas y los promps, solicitados para el TPN4. 
 
-Actualizacion
-Ultima  
-*20-6-2024. 
-Datos de los cambios
--*Se removio el logotipo de Asus ROG. 
--*se Agrego Funcionalidad al Formulario. Probar, te responderé si recibo la notificacion. 
--*Se mejoro la estetica en la seccion Trabajos. 
--*Se Agrego en la seccion trabajos, las etiquetas y los promps, solicitados para el TPN4. 
+
+
+
   
 
 
